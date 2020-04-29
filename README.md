@@ -22,7 +22,8 @@ Method
 We applied a survival analysis technique using parametric model. We used coxph fit function in R-studio, then we run a cox regression of survival on female, age, and coupon status, and we summarized the survival fit, the following is the result:
 
 
- 
+![4](https://user-images.githubusercontent.com/58350018/80561012-9d9c5200-89a8-11ea-8611-eb8fc8dabb50.jpg)
+
 
 First of all, we can see that the coefficient for the female variable is not statistically significant. (If this was a real analysis, we’d probably remove it and run the model again, but this is an illustrative example with fake data…) But the other two variables did produce significant results! 
 In order to interpret the coefficients in general the positive coefficient means that as the independent variable increases the time-to-event decreases, (lower duration or more likely for the event to happen).
@@ -44,6 +45,8 @@ Cox regression is built on some assumptions and, if the data violates those assu
 In our case, we said “coupon users churn 1.8 times faster than non-coupon users”, that means cox regression assumes that all relationships are multiplicative throughout time. In other words, the model assumes the churn rate for coupon users is always 1.8 times higher than non-coupon users.
 In order to test the whole model, we used cox.zph function, the following is the result:
 
+
+![5](https://user-images.githubusercontent.com/58350018/80561019-a2610600-89a8-11ea-8e4b-f3c4fdbfc88b.jpg)
  
 
 From the output above, the test is not statistically significant for each of the female and age, but the coupon and the global test is a statistically significant. Therefore, we can NOT assume the proportional hazards.
